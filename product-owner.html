@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+
+<html lang="en" and dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta content="IE-edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, intial-scale=1.0" name="viewport">
+    <title>Product Owner</title>
+    <!--stylesheet-->
+    <link rel="stylesheet" type="text/css" href="product-style-only.css"/>
+    <script src="login_register.js"></script>
+
+    <!-- Modal Section -->
+<div class="bg-modal">
+    <div class="modal-content">
+
+        <div class="close">+</div>
+        <img src="https://www.fullerton.edu/msi/_resources/images/icons/tuffy_icon.png" alt="" width="50" height="50">
+        <form action="">
+            <div class="product-text">Product Name</div>
+
+            <!-- Save draft function -->
+            <body style="text-align:center">
+                <div class="popup" onclick="myFunction()">Save Draft
+                  <span class="popuptext" id="myPopup">Your Draft has been saved!</span>
+                </div>
+            <!-- ------------------->
+
+            <textarea id="product" class="product-txtbox"> </textarea>
+            <div class="description-text">Description</div>
+            <textarea id="description" class="description-txtbox"> </textarea>
+            <div class="price-text">Price</div>
+            <input type="number" id = "price" class="price-txtbox" min="0" max="100000" step="0.25" value="0.00" oninput="validity.valid||(value='');"/>
+            <button class="list-btn" onclick="store();" type="button">List Product</button>
+        </form>
+        <input type="file" class="upload-button" accept="image/png, image/jpg, image/jpeg" onchange="loadFile(event)">
+        <div class="preview-text">Image Preview</div>
+        <p><img id="uploaded-image" class="image-preview" width="200" /></p>
+    </div>
+
+</div>
+
+<div class="bg-modal-purchase">
+    <div class="modal-content">
+
+        <div class="purchase-close" onclick="purchaseClose()">+</div>
+        <img src="https://www.fullerton.edu/msi/_resources/images/icons/tuffy_icon.png" alt="" width="50" height="50">
+        <form action="">
+            <div class="customer-text">Name</div>
+            <textarea id="customer" class="customer-txtbox"> </textarea>
+            <div class="price-purchase-text">Price</div>
+            <input type="number" id = "price" class="price-purchase-txtbox" min="0" max="100000" step="0.25" value="0.00" oninput="validity.valid||(value='');"/>
+            <div class="cost-text">Total Cost (after tax)</div>
+            <input type="number" id = "cost" class="cost-txtbox" min="0" max="100000" step="0.25" value="0.00" oninput="validity.valid||(value='');"/>
+            <div class="customer-address-text">Address</div>
+            <textarea id="address" class="customer-address-txtbox"> </textarea>
+            <div class="credit-card-text">Credit Card Number</div>
+            <input type="number" id = "creditcard" class="credit-card-txtbox" min="0" max="999999999999999" oninput="validity.valid||(value='');"/>
+            <div class="credit-expiry-text">Expiry Date</div>
+            <textarea id="creditexpiry" class="credit-expiry-txtbox"> </textarea>
+            <div class="credit-cvv-text">CVV</div>
+            <input type="number" id = "creditcvv" class="credit-cvv-txtbox" min="0" max="999" oninput="validity.valid||(value='');"/>
+            <input type="checkbox" id="titancard" class="titan-card" name="titancard" value="TitanCard">
+            <label for="titancard" class="titan-card-label"> Use TitanCard for this purchase</label><br>
+            <button class="purchase-btn" type="button" onclick="registerPurchaseMethod()">Purchase Product</button>
+        </form>
+    </div>
+
+</div>
+
+</head>
+<body>
+    <div id="top">
+        <div class="top-left">
+        </div>
+
+        <div class="top-right">
+            <div class="navigation">
+                <a href="browsing.html">Browse</a>
+                <a href="notification.html">Notification</a>
+                <a href="chat.html">Chat</a>
+                <a href="favorites.html">Favorites</a>
+                <a href="account.html">Account</a>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="mid">
+        <div class="left">
+            <a href="product.html"><img src="https://cdn.elearningindustry.com/wp-content/uploads/2016/05/top-10-books-every-college-student-read-e1464023124869.jpeg" class="product-image" alt=""></a><br>
+            <p><img id="posted-image" class="product-image" width="200"/></p><br>
+            <h3>Books</h3>
+            <h4>$150.78</h4>
+            Item added: 10/30/2022 4:15PM<br>
+            Sold by: cameradevelop   
+            <a hidden href="reviews.html"><button>Review Seller</button></a><br><br>
+            
+        <div class="bid-timer">
+            <left>
+                <table style="border:1px solid ;text-align:center;">
+                    <tr style="font-size:30px;">
+                        <td id="days"><center>00</center></td>
+                        <td id="hours"><center>00</center></td>
+                        <td id="min"><center>00</center></td>
+                        <td id="sec"><center>00</center></td>
+                    </tr>
+                    <tr>
+                        <td><center> Days &ensp;</center></td>
+                        <td><center> Hours &ensp;</center></td>
+                        <td><center> Minutes &ensp;</center></td>
+                        <td><center> Seconds </center></td>
+                    </tr>
+                </table>
+
+        
+            </left>
+
+            <script type="text/javascript">
+                var x = new Date();
+                var y = x.getTime();
+                var total = y + (3 * 24 * 3600000);
+                function count() {
+                    var now = new Date();
+                    var currentTime = now.getTime();
+
+                    var diff = total - currentTime;
+                    var s = Math.floor(diff / 1000);
+                    var m = Math.floor(s / 60);
+                    var h = Math.floor(m / 60);
+                    var d = Math.floor(h / 24);
+
+                    h = h % 24;
+                    m = m % 60;
+                    s = s % 60;
+
+                    h = (h < 10) ? "0" + h : h;
+                    m = (m < 10) ? "0" + m : m;
+                    s = (s < 10) ? "0" + s : s;
+                    d = (d < 10) ? "0" + d : d;
+
+                    document.getElementById("days").innerHTML = d;
+                    document.getElementById("hours").innerHTML = h;
+                    document.getElementById("min").innerHTML = m;
+                    document.getElementById("sec").innerHTML = s;
+                    setTimeout(count, 1000);
+                }
+                count();
+            </script>
+            <text type="button">Minimum Bid is $10</text>
+
+           
+        </div>
+
+
+        <button hidden type="button">Place Bid</button>        
+    </div>
+        
+
+
+
+        <div id="listed-products"></div>
+
+        <div class="right">
+
+            <div id="listed-product" class="product-post">
+
+            </div>
+            <div id="product-description" class="description-post">
+
+            </div>
+            <div id="listed-price" class="price-post">
+
+            </div>
+
+            <div class="bid-board">
+            <center>
+                <table style="border: 5px solid; text-align: center;">
+                    <tr style="font-size:30px;">
+                        <th>Name</th>
+                        <th>Book</th>
+                        <th>Bid</th>
+                    </tr>
+
+                    <tr style="font-size:30px;">
+                        <th>Jack</th>
+                        <td>IT</td>
+                        <td>700</td>
+                    </tr>
+
+                    <tr style="font-size:30px;">
+                        <th>Becky</th>
+                        <td>DUNE</td>
+                        <td>80</td>
+                    </tr>
+
+                    <tr style="font-size:30px;">
+                        <th>Lily</th>
+                        <td>JAWS</td>
+                        <td>263</td>
+                    </tr>
+
+                    <tr style="font-size:30px;">
+                        <th>Bob</th>
+                        <td>CUT</td>
+                        <td>80</td>
+                    </tr>
+
+                    <tr style="font-size:30px;">
+                        <th>Billy</th>
+                        <td>FALLEN</td>
+                        <td>46</td>
+                    </tr>
+                </table>
+            </center>
+        </div>
+
+            <a href="#" id="list-button" class="list-product">List Product</a>
+            <button id ="edit" class="edit-btn" onclick="editProduct()" type="button">Edit Product</button>
+            <!--<button id ="buy" class="buy-btn" onclick="purchaseProduct()" type="button">Buy Product</button>-->
+
+
+        </div>
+
+    </div>
+
+
+</body>
+<script src="product_page.js"></script>
+</html>

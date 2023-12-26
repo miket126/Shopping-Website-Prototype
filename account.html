@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+
+<html lang="en" and dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta content="IE-edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, intial-scale=1.0" name="viewport">
+    <title>Account</title>
+    <!--stylesheet-->
+    <link rel="stylesheet" type="text/css" href="account.css"/>
+    <script src="Script1.js"></script>
+    <script crossorigin="anonymous" src="https://kit.fontawesome.com/c8e4d183c2.js"></script>
+
+
+    <!-- Loaned Books Modal Section -->
+    <div class="loaned-modal">
+        <div class="loaned-content">
+    
+            <div class="close">+</div>
+            <div class="tuffy-picture">
+                <img src="https://www.fullerton.edu/msi/_resources/images/icons/tuffy_icon.png" alt="" width="50" height="50">
+            </div>
+            <div class="loaned-books">
+            <h2>Loaned Books</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Item Picture</th>
+                        <th>Item Name</th>
+                        <th>Date Borrowed</th>
+                        <th>Date to be Returned</th>
+                        <th>Money to be Made</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <td>
+                        <img class="loaned-picture"src="https://m.media-amazon.com/images/I/41+RHQDknYL._SX409_BO1,204,203,200_.jpg" alt="">
+                    </td>
+                    <td>Calculus, Ninth Edition</td>
+                    <td>8/5/2022</td>
+                    <td>11/25/2022</td>
+                    <td style="color: green;">$24.75</td>
+
+                </tbody>
+                <tbody>
+                    <td>
+                        <img class="loaned-picture"src="https://m.media-amazon.com/images/I/81iXn5LPFiL.jpg" alt="">
+                    </td>
+                    <td>Software Engineering, 10th Edition</td>
+                    <td>9/10/2022</td>
+                    <td>12/12/2022</td>
+                    <td style="color: green;">$15.99</td>
+
+                </tbody>
+            </table>
+
+            </div> 
+        </div>
+        </div>
+    
+    </div>
+
+    <!-- Rented Books Modal Section -->
+    <div class="rented-modal">
+        <div class="rented-content">
+    
+            <div class="rented-close">+</div>
+            <div class="tuffy-picture">
+                <img src="https://www.fullerton.edu/msi/_resources/images/icons/tuffy_icon.png" alt="" width="50" height="50">
+            </div>
+            <div class="loaned-books">
+            <h2>Rented Books</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Item Picture</th>
+                        <th>Item Name</th>
+                        <th>Date Borrowed</th>
+                        <th>Date to be Returned</th>
+                        <th>Rental Cost</th>
+                        <th>Late Fee<br/>(20% of Rental Cost)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <td>
+                        <img class="loaned-picture"src="https://m.media-amazon.com/images/I/51RtRHLF7QL._SX394_BO1,204,203,200_.jpg" alt="">
+                    </td>
+                    <td>American History: Connecting With the Past</td>
+                    <td>8/10/2022</td>
+                    <td>11/30/2022</td>
+                    <td>$34.99</td>
+                    <td style="color: red;">$6.99</td>
+
+                </tbody>
+                <tbody>
+                    <td>
+                        <img class="loaned-picture"src="https://m.media-amazon.com/images/I/51vQlx7ig3L.jpg" alt="">
+                    </td>
+                    <td>Compilers: Principles, Techniques, and Tools 2nd Edition</td>
+                    <td>9/5/2022</td>
+                    <td>12/4/2022</td>
+                    <td>$80.77</td>
+                    <td style="color: red;">$16.15</td>
+
+                </tbody>
+            </table>
+
+            </div> 
+        </div>
+        </div>
+    
+    </div>
+
+</head>
+<body>
+    <div id="top"> 
+        <div class="top-left">
+            <div class="search-bar">
+                <div class="search-input">
+                    <input type="text" placeholder="Search For Product" name="search" />
+                </div>
+                <div class="search-icon">
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="top-right">
+            <div class="navigation">
+                <a href="browsing.html">Browse</a>
+                <a href="notification.html">Notification</a>
+                <a href="chat.html">Chat</a>
+                <a href="favorites.html">Favorites</a>
+                <a href="account.html">Account</a>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <div id="mid">
+        <div class="left">
+            <div class="user-name">Admin</div>
+            <a><img src="https://thecaninebuddy.com/wp-content/uploads/2021/08/crying-cat-meme.jpg" alt="Profile Picture"></a>
+            <a href="#" id="loaned-button" class="loaned-product">Loaned Books</a><br/> 
+            <a href="#" id="rented-button" class="rented-product">Rented Books</a> 
+        </div>
+        
+        <div class="right">
+            <div class="owned-products">OWNED</div> 
+            <div class="product-field">
+                <ul class="items">
+                    <li data-category="" data-price="">
+                        <div class="detail">
+                            <p class="icon">
+                               <span><i class="far fa-share-square"></i></span>
+                            </p>
+                            <a href="/products/product_one.html"><img src="https://i.pcmag.com/imagery/reviews/02lcg0Rt9G3gSqCpWhFG0o1-2..v1656623239.jpg" alt=""></a>
+                            <h1 hidden>Equipment</h1>
+                            <h3>Laptop</h3>
+                        </div>
+                        <h4>$150.78</h4>
+                    </li>
+                    <li data-category="" data-price="">
+                        <div class="detail">
+                            <p class="icon">
+                               <span><i class="far fa-share-square"></i></span>
+                            </p>
+                            <a href="/products/product_two.html"><img src="https://media.accobrands.com/media/560-560/474398.jpg?width=680px&height=449px" alt=""></a>
+                            <h1 hidden>Book</h1>
+                            <h3>Notebook Bundle</h3>
+                        </div>
+                        <h4>$12.78</h4>
+                    </li>
+                    <li data-category="" data-price="">
+                        <div class="detail">
+                            <p class="icon">
+                               <span><i class="far fa-share-square"></i></span>
+                            </p>
+                            <a href="/products/product_three.html"><img src="https://www.testbanksafe.com/wp-content/uploads/2015/04/01338059131-500x500-400x400.jpg" alt=""></a>
+                            <h1 hidden>Book</h1>
+                            <h3>Operating Systems Book</h3>
+                        </div>
+                        <h4>$75.78</h4>
+                    </li>
+                    <li data-category="" data-price="">
+                        <div class="detail">
+                            <p class="icon">
+                               <span><i class="far fa-share-square"></i></span>
+                            </p>
+                            <a href="/products/product_four.html"><img src="https://m.media-amazon.com/images/I/91YandYecdL.jpg" alt=""></a>
+                            <h1 hidden>Equipment</h1>
+                            <h3>Backpack</h3>
+                        </div>
+                        <h4>$30.78</h4>
+                    </li>
+                </ul>
+            </div>            
+        </div>
+    </div>
+    
+</body>
+<script src="account.js"></script>
+</html>

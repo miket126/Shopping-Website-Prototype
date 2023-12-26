@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<html lang="en" and dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta content="IE-edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, intial-scale=1.0" name="viewport">
+    <title>Product</title>
+    <!--stylesheet-->
+    <link rel="stylesheet" type="text/css" href="favorites-style-only.css"/>
+    <script src="login_register.js"></script>
+
+    <!-- Modal Section -->
+<div class="bg-modal-favorites">
+    <div class="modal-content">
+
+        <div class="favorites-close"onclick="favoritesClose()">+</div>
+        <img src="https://www.fullerton.edu/msi/_resources/images/icons/tuffy_icon.png" alt="" width="50" height="50">
+        <form action="">
+            <div class="customer-text">Name</div>
+            <textarea id="customer" class="customer-txtbox"> </textarea>
+            <div class="price-purchase-text">Price</div>
+            <input type="number" id = "price" class="price-purchase-txtbox" min="0" max="100000" step="0.25" value="0.00" oninput="validity.valid||(value='');"/>
+            <div class="cost-text">Total Cost (after tax)</div>
+            <input type="number" id = "cost" class="cost-txtbox" min="0" max="100000" step="0.25" value="0.00" oninput="validity.valid||(value='');"/>
+            <div class="customer-address-text">Address</div>
+            <textarea id="address" class="customer-address-txtbox"> </textarea>
+            <div class="credit-card-text">Credit Card Number</div>
+            <input type="number" id = "creditcard" class="credit-card-txtbox" min="0" max="999999999999999" oninput="validity.valid||(value='');"/>
+            <div class="credit-expiry-text">Expiry Date</div>
+            <textarea id="creditexpiry" class="credit-expiry-txtbox"> </textarea>
+            <div class="credit-cvv-text">CVV</div>
+            <input type="number" id = "creditcvv" class="credit-cvv-txtbox" min="0" max="999" oninput="validity.valid||(value='');"/>
+            <input type="checkbox" id="titancard" class="titan-card" name="titancard" value="TitanCard">
+            <label for="titancard" class="titan-card-label"> Use TitanCard for this purchase</label><br>
+            <button class="purchase-btn" type="button" onclick="registerPurchaseMethod()">Purchase Product</button>
+        </form>
+    </div>
+
+</div>
+
+</head>
+<body>
+    <div id="top">
+
+        <div class="top">
+            <img src="https://www.fullerton.edu/msi/_resources/images/icons/tuffy_icon.png" alt="Tuffix Marketplace" width="50" height="50">
+            <div class="navigation">
+                <a href="browsing.html">Browse</a>
+                <a href="notification.html">Notification</a>
+                <a href="chat.html">Chat</a>
+                <a href="favorites.html">Favorites</a>
+                <a href="account.html">Account</a>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="mid">
+
+            <div class="left-left">
+              <h1> My Favorites </h1> <br>
+              <div class="product-image">
+                  <a href="product.html"><img src="https://i.pcmag.com/imagery/reviews/02lcg0Rt9G3gSqCpWhFG0o1-2..v1656623239.jpg" class="product-image" alt=""><br>
+                  <h1 hidden>Equipment</h1><br>
+
+                  <a href="product.html"><img src="https://cdn.shopify.com/s/files/1/0406/2511/1196/products/ACtC-3era2pPlbHbt_4y9qqf0ejuxdXGItq_z0qqMX7PBH8A17oBd9cK2H6dwoTavBQwRfAB9ELwaKuuj3Ls-382DocovoUnyl0wfVWYedPliYfepo7l1tkXUUotkl9Tg023LvLDVo4ssU5iXC-kLSckqHypgg_s1024-no_900x.jpg?v=1620093755" class="product-image" alt=""></a><br>
+                  <h1 hidden>Fahrenheit 451 Book</h1><br>
+
+                  <a href="product.html"><img src="https://m.media-amazon.com/images/I/91YandYecdL.jpg" class="product-image" alt="" height="50px"></a><br>
+                  <h1 hidden>Backpack</h1><br>
+                </div>
+              </div>
+            <div class="left-right">
+              <div class="product-image">
+              <h3>Laptop</h3>
+              <h4>$150.78</h4>
+              Item added to favorites: 10/30/2022 4:15PM<br>
+              Sold by: Admin
+              </div>
+
+              <div class="product-image-text">
+              <h3>Fahrenheit 451 Book</h3>
+              <h4>$25.78</h4>
+              Item added to favorites: 10/26/2022 7:15AM<br>
+              Sold by: weightyastronomer
+              </div>
+
+              <div class="product-image-text">
+              <h3>Backpack, with USB to lightning charging cable</h3>
+              <h4>$30.78</h4>
+              Item added to favorites: 09/15/2022 9:21PM<br>
+              Sold by: Admin
+              </div>
+            </div>
+
+
+
+            <button id ="buy" class="buy-btn" onclick="favoritesPurchase()" type="button">Buy Product</button>
+
+
+
+        <div id="favorite-products" ></div>
+
+
+
+    </div>
+
+
+</body>
+<script src="product_page.js"></script>
+</html>

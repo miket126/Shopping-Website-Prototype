@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<style>
+body
+{ 
+    background-image: url('https://s26162.pcdn.co/wp-content/uploads/sites/2/2022/07/Books-print.jpg'); 
+}
+</style>
+<html>
+<head>
+    <link rel="stylesheet" href="BiddingStyle.css">
+    <script src="Timer.js"></script>
+</head>
+<body>
+    <div class="line"></div>
+    <div class="wrapper">
+        <header role="banner">
+            <nav role="navigation">
+                <ul class="nav-ul">
+                    <li><a href="browsing.html">Home</a></li>
+                </ul>
+            </nav>
+            <img src="https://kbimages1-a.akamaihd.net/65b380e4-08ff-4418-84cc-fd8e6fab6897/1200/1200/False/classic-goosebumps-books-1-4.jpg" height="300" width="240" />
+            <br /><br />
+
+            
+            <left>
+                <table style="border:1px solid ;text-align:center;">
+                    <tr style="font-size:30px;">
+                        <td id="days"><center>00</center></td>
+                        <td id="hours"><center>00</center></td>
+                        <td id="min"><center>00</center></td>
+                        <td id="sec"><center>00</center></td>
+                    </tr>
+                    <tr>
+                        <td><center> Days &ensp;</center></td>
+                        <td><center> Hours &ensp;</center></td>
+                        <td><center> Minutes &ensp;</center></td>
+                        <td><center> Seconds </center></td>
+                    </tr>
+                </table>
+
+            </left>
+
+            <script type="text/javascript">
+                var x = new Date();
+                var y = x.getTime();
+                var total = y + (3 * 24 * 3600000);
+                function count() {
+                    var now = new Date();
+                    var currentTime = now.getTime();
+
+                    var diff = total - currentTime;
+                    var s = Math.floor(diff / 1000);
+                    var m = Math.floor(s / 60);
+                    var h = Math.floor(m / 60);
+                    var d = Math.floor(h / 24);
+
+                    h = h % 24;
+                    m = m % 60;
+                    s = s % 60;
+
+                    h = (h < 10) ? "0" + h : h;
+                    m = (m < 10) ? "0" + m : m;
+                    s = (s < 10) ? "0" + s : s;
+                    d = (d < 10) ? "0" + d : d;
+
+                    document.getElementById("days").innerHTML = d;
+                    document.getElementById("hours").innerHTML = h;
+                    document.getElementById("min").innerHTML = m;
+                    document.getElementById("sec").innerHTML = s;
+                    setTimeout(count, 1000);
+                }
+                count();
+            </script>
+            <text type="button">Minimum Bid is $10</text>
+
+            <p>
+                Place Bid?
+            </p>
+            <button type="button">Place Bid</button>
+
+            <center>
+                <table style="border: 5px solid; text-align: center;">
+                    <tr style="font-size:30px;">
+                        <th>Name</th>
+                        <th>Book</th>
+                        <th>Bid</th>
+                    </tr>
+
+                    <tr style="font-size:30px;">
+                        <th>Jack</th>
+                        <td>IT</td>
+                        <td>700</td>
+                    </tr>
+
+                    <tr style="font-size:30px;">
+                        <th>Becky</th>
+                        <td>DUNE</td>
+                        <td>80</td>
+                    </tr>
+
+                    <tr style="font-size:30px;">
+                        <th>Lily</th>
+                        <td>JAWS</td>
+                        <td>263</td>
+                    </tr>
+
+                    <tr style="font-size:30px;">
+                        <th>Bob</th>
+                        <td>CUT</td>
+                        <td>80</td>
+                    </tr>
+
+                    <tr style="font-size:30px;">
+                        <th>Billy</th>
+                        <td>FALLEN</td>
+                        <td>46</td>
+                    </tr>
+                </table>
+            </center>
+        </header>
+      </div>
+</body>
+</html>

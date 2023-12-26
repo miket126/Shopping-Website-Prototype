@@ -1,0 +1,343 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+/*----------------Main Format-----------------*/
+
+.top {
+  height: 20%;
+  width: 100%;
+  background: transparent;
+}
+
+.top-left {
+  width: 40%;
+  height: 100px;
+  float: left;
+  background-color: #625cafb9;
+}
+
+.search-bar {
+  display: flex;
+  justify-content: center;
+}
+
+.top-right {
+  width: 60%;
+  height: 100px;
+  float: right;
+  background-color: powderblue;
+}
+
+.left {
+  height: 800px;
+  width: 15%;
+  float: left;
+  background-color: lightyellow;
+}
+
+.right {
+  height: 2000px;
+  width: 85%;
+  float: right;
+  background-color: rgb(230, 176, 223);
+}
+
+/*----------------Start Code-----------------*/
+
+
+.loaned-books {
+    text-align: left;
+    margin-bottom: 10rem;
+}
+
+.loaned-books h2  {
+    margin-bottom: .08rem;
+}
+
+.loaned-books table   {
+    background: rgb(255, 255, 255);
+    width: 100%;
+    border-radius: 2rem;
+    padding: 1.2rem;
+    text-align: center;
+    box-shadow: 0 2rem 3rem rgba(132, 139, 200, 0.18);
+    transition: all 300ms ease;
+
+}
+
+.loaned-books table:hover {
+    box-shadow: none;
+}
+
+table tbody td{
+    height: 2.8rem;
+    border-bottom: 1px solid rgba(132, 139, 200, 0.18);
+    color: #677483;
+}
+
+table tbody tr:last-child td    {
+    border: none;
+}
+
+.loaned-picture   {
+width: 100px;
+height: auto;
+}
+
+.tuffy-picture  {
+    justify-content: center;
+}
+
+.loaned-modal{
+    width: 100%;
+    height: 100%;
+    /*background-color: rgba(0,0,0,0.7);*/
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    animation: loan-drop 0.5s ease forwards;
+    z-index: 1;
+  }
+  
+  .loaned-content {
+    width: 1000px;
+    height: 700px;
+    background-color: white;
+    border-radius: 4px;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+  }
+
+  .rented-modal{
+    width: 100%;
+    height: 100%;
+    /*background-color: rgba(0,0,0,0.7);*/
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    animation: rented-drop 0.5s ease forwards;
+    z-index: 1;
+  }
+
+  .user-name{
+    font-size: 50px;
+    font-weight: bold;
+  }
+
+  .owned-products{
+    font-size: 45px;
+    font-weight: bold;
+    text-decoration: underline;
+    text-align: center;
+  }
+  @keyframes rented-drop {
+    
+    0%{opacity: 0}
+    70%{transform: translateY(0px)}
+    100%{transform: translateY(0px);opacity: 1; background-color: rgba(0,0,0,0.7);}
+  }
+
+  @keyframes loan-drop {
+    
+    0%{opacity: 0}
+    70%{transform: translateY(0px)}
+    100%{transform: translateY(0px);opacity: 1; background-color: rgba(0,0,0,0.7);}
+  }
+
+  
+  .rented-content {
+    width: 1200px;
+    height: 700px;
+    background-color: white;
+    border-radius: 4px;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+  }
+
+  .close    {
+    position: absolute;
+    top: 0;
+    right: 14px;
+    font-size: 42px;
+    transform: rotate(45deg);
+    cursor: pointer;
+  }
+
+  .rented-close    {
+    position: absolute;
+    top: 0;
+    right: 14px;
+    font-size: 42px;
+    transform: rotate(45deg);
+    cursor: pointer;
+  }
+
+/*----------OWNED ITEMS---------------*/
+
+.product-field ul{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.product-field ul li{
+  list-style: none;
+  width: 20%;
+  height: 400px;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 10px;
+  transition: 0.5s all;
+  background: whitesmoke;
+  overflow: hidden;
+}
+ li img{
+   width: 100%;
+  height: 50%;
+ }
+
+ li .detail h3,
+ li .detail h4{
+   padding: 10px;
+ }
+ li .icon{
+   height: 40px;
+    margin: 10px auto;
+ }
+.icon span{
+   width: 30px;
+    height: 30px;
+    line-height: 30px;
+    background: #00000030;
+    display: inline-block;
+    text-align: center;
+    margin: 0 0 0 20px;
+    float: right;
+    border-radius: 5px;
+    color: white;
+ }
+ .icon span:hover{
+   background: #3a9aa3;
+   cursor: pointer;
+ }
+
+ .right .product-field{
+  width: 90%;
+  margin: 5px auto;
+}
+
+img {
+  object-fit: contain;
+  height: 15em;
+  width: 95%;
+  padding: 25px 0 0 0;
+  display:inline-block;
+}
+
+.product-field ul{
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  justify-content: space-between;
+}
+
+.product-field ul li{
+  list-style: none;
+  width: 23.4%;
+  height: 400px;
+  transition: 0.5s all;
+  background: whitesmoke;
+  /*overflow: hidden;*/
+  margin: 50px 1px 0 1px;
+  position: relative;
+}
+
+
+.detail{
+  width: 100%;
+  height: 100%;
+}
+
+.detail .icon{
+    height: 5%;
+    display:inline-block;
+}
+
+.icon span{
+  background: #00000030;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    padding: 0;
+    border-radius: 50%;
+    margin: 0 0 20px 5px;
+    font-size: 20px;
+    color: white;
+}
+
+.icon span:hover{
+  background: var(--gra);
+  cursor: pointer;
+}
+
+.detail .buy-btn{
+    display: inline-block;
+    padding: 8px 20px;
+    margin: 15px;
+    font-weight: bold;
+    border-radius: 6px;
+    border: 1px solid #999;
+    cursor: pointer;
+
+}
+
+.detail .buy-btn:hover{
+      background: var(--gra);
+      color: white;
+      border-color: cyan;
+}
+
+li h4{
+    font-size: 20px;
+    background: whitesmoke;
+
+}
+
+li .detail h3,
+
+ul.list-display li .detail h3,
+ul.list-display li,
+
+
+main ul{
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  justify-content: space-between;
+}
+
+main ul li{
+  list-style: none;
+  width: 23.4%;
+  height: 400px;
+  transition: 0.5s all;
+  background: whitesmoke;
+  /*overflow: hidden;*/
+  margin: 50px 1px 0 1px;
+  position: relative;
+}

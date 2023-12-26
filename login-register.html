@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html lang="en" and dir="ltr">
+<head>
+    <title>Log In</title>
+    <link rel="stylesheet" href="login-register-style-only.css"/>
+    <script src="login_register.js"></script>
+
+</head>
+<body>
+<style>
+    body
+    {
+        background: url("https://s26162.pcdn.co/wp-content/uploads/sites/2/2022/05/Book.jpg");
+    }
+</style>
+
+<div class="hero">
+    <div class="form-box">
+        <div class="button-box">
+            <div id="btn"></div>
+            <button type="button" class="toggle-btn" onclick="login()">Log In</button>
+            <button type="button" class="toggle-btn" onclick="register()">Register</button>
+        </div>
+        <div class="social-icons">
+            <img alt="Facebook Icon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Facebook_icon.svg/2048px-Facebook_icon.svg.png">
+            <img alt="Twitter Icon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Twitter-logo.svg/800px-Twitter-logo.svg.png">
+            <img alt="Instagram Icon" src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg">
+        </div>
+        <form id="login" class="input-group">
+            <input type="text" class="input-field" id ="login-id" placeholder="User ID" required />
+            <input type="password" class="input-field" id = "password-id" placeholder="Password" required />
+            <input type="checkbox" class="chech-box" /><span>Remember Password</span>
+            <button type="submit" class="submit-btn" onclick="loginValidation(event)">Log In</button>
+            <a href="guestBrowsing.html" class="button">Continue as Guest</a>
+        </form>
+        <form id="register" class="input-group">
+            <input type="text" class="input-field" placeholder="User ID" required />
+            <input type="email" class="input-field" id="email-id" placeholder="Email ID" required />
+            <input type="password" class="input-field" placeholder="Password" required />
+            <input type="checkbox" class="chech-box" /><span>I agree to the terms and conditions</span>
+            <button type="submit" class="submit-btn" onclick="registerValidation()">Register</button>
+            <a href="guestBrowsing.html" class="button">Continue as Guest</a>
+        </form>
+    </div>
+</div>
+
+
+<script src="login_register.js"></script>
+
+
+</body>
+</html>

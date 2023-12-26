@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta content="width=device-width, intial-scale=1.0" name="viewport">
+	<title>Browse</title>
+    <script crossorigin="anonymous" src="https://kit.fontawesome.com/c8e4d183c2.js"></script>    
+    <link rel="stylesheet" type="text/css" href="browsing.css">
+
+    <div class="bg-modal-purchase">
+        <div class="modal-content">
+    
+            <div class="purchase-close" onclick="purchaseClose()">+</div>
+            <img class="tuffy" src="https://www.fullerton.edu/msi/_resources/images/icons/tuffy_icon.png" alt="" width="50" height="50">
+            <form action="">
+                <div class="customer-text">Name</div>
+                <textarea id="customer" class="customer-txtbox"> </textarea>
+                <div class="price-purchase-text">Price</div>
+                <input type="number" id = "price" class="price-purchase-txtbox" min="0" max="100000" step="0.25" value="0.00" oninput="validity.valid||(value='');"/>
+                <div class="cost-text">Total Cost (after tax)</div>
+                <input type="number" id = "cost" class="cost-txtbox" min="0" max="100000" step="0.25" value="0.00" oninput="validity.valid||(value='');"/>
+                <div class="customer-address-text">Address</div>
+                <textarea id="address" class="customer-address-txtbox"> </textarea>
+                <div class="credit-card-text">Credit Card Number</div>
+                <input type="number" id = "creditcard" class="credit-card-txtbox" min="0" max="999999999999999" oninput="validity.valid||(value='');"/>
+                <div class="credit-expiry-text">Expiry Date</div>
+                <textarea id="creditexpiry" class="credit-expiry-txtbox"> </textarea>
+                <div class="credit-cvv-text">CVV</div>
+                <input type="number" id = "creditcvv" class="credit-cvv-txtbox" min="0" max="999" oninput="validity.valid||(value='');"/>
+                <input type="checkbox" id="titancard" class="titan-card" name="titancard" value="TitanCard">
+                <label for="titancard" class="titan-card-label"> Use TitanCard for this purchase</label><br>
+                <button class="purchase-btn" type="button" onclick="registerPurchaseMethod()">Purchase Product</button>
+            </form>
+        </div>
+    
+    </div>
+</head>
+<body>
+    <div id="top"> 
+        <div class="top-left">
+            <div class="search-bar">
+                <form class="search-form">
+                    <input id="search-form" type="text" placeholder="Search For Product" name="search" />
+                </form>
+                <div class="search-icon">
+                    <button class="fas fa-search"></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="top-right">
+            <div class="navigation">
+                <a>Welcome back, Admin</a><br>
+                <a href="browsing.html">Browse</a>
+                <a href="notification.html">Notification</a>
+                <a href="chat.html">Chat</a>
+                <a href="favorites.html">Favorites</a>
+                <a href="account.html">Account</a>
+                <a href="login-register.html" onclick="logout(event)">Logout</a>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div id="mid">
+        <div class="left">
+                <div class="indicator"><h3>Filter</h3><br>
+                    <h5 data-filter="all" class="active"><a href="#">All</a></h5>
+                    <h5 data-filter="Equipment"><a href="#">Equipment</a></h5>
+                    <h5 data-filter="Book"><a href="#">Book</a></h5>
+		    <h5 data-filter="Pet"><a href="#">Pet</a></h5>
+                </div><br><br>
+                <div class="filter-condition">
+                    <span>Sort</span><br>
+                    <select name="" id="select">
+                        <option value="Default">Default</option>
+                        <option value="LowToHigh">Low to high</option>
+                        <option value="HighToLow">High to low</option>
+                    </select>
+                </div>
+        </div>  
+
+        <div class="right">
+            <div class="product-field">
+                <ul class="items">
+                    <li data-category="" data-price="">
+                        <div class="detail">
+                            <p class="icon">
+                               <span><i class="far fa-heart"></i></span>
+                               <span><i class="far fa-share-square"></i></span>
+                               <span><i class="fas fa-shopping-basket"></i></span>
+                            </p>
+                            <a href="/browsing products/browsing_one.html"><img src="https://i5.walmartimages.com/asr/c40f90e0-bacb-4df1-8689-9a3375553bd6_5.a83087ef1e35694babd559d28174f4b1.jpeg" alt=""></a>
+                            <h1 hidden>Equipment</h1>
+                            <h3>Dumbell</h3>
+                            <button id ="buy" class="buy-btn" onclick="purchaseProduct()" type="button">Buy now</button>
+                        </div>
+                        <h4>$20.78</h4>
+                    </li>
+                    <li data-category="" data-price="">
+                        <div class="detail">
+                            <p class="icon">
+                               <span><i class="far fa-heart"></i></span>
+                               <span><i class="far fa-share-square"></i></span>
+                               <span><i class="fas fa-shopping-basket"></i></span>
+                            </p>
+                            <a href="/browsing products/browsing_two.html"><img src="https://i.pcmag.com/imagery/reviews/02lcg0Rt9G3gSqCpWhFG0o1-2..v1656623239.jpg" alt=""></a>
+                            <h1 hidden>Equipment</h1>
+                            <h3>Laptop</h3>
+                            <button id ="buy" class="buy-btn" onclick="purchaseProduct()" type="button">Buy now</button>
+                        </div>
+                        <h4>$150.78</h4>
+                    </li>
+		    <li data-category="" data-price="">
+                        <div class="detail">
+                            <p class="icon">
+                               <span><i class="far fa-heart"></i></span>
+                               <span><i class="far fa-share-square"></i></span>
+                               <span><i class="fas fa-shopping-basket"></i></span>
+                            </p>
+                            <a href="/browsing products/browsing_three.html"><img src="https://i.kym-cdn.com/photos/images/newsfeed/001/878/329/dfa.jpg" alt=""></a>
+                            <h1 hidden>Pet</h1>
+                            <h3>El gato</h3>
+                            <button id ="buy" class="buy-btn" onclick="purchaseProduct()" type="button">Buy now</button>
+                        </div>
+                        <h4>$0.00</h4>
+                    </li>
+                    <li data-category="" data-price="">
+                        <div class="detail">
+                            <p class="icon">
+                               <span><i class="far fa-heart"></i></span>
+                               <span><i class="far fa-share-square"></i></span>
+                               <span><i class="fas fa-shopping-basket"></i></span>
+                            </p>
+                            <a href="/browsing products/browsing_four.html"><img src="https://i5.walmartimages.com/asr/9d0eb54b-9a47-436b-9092-d17b204964fb.6a5e181469e04cf8c426039ce55c6703.jpeg" alt=""></a>
+                            <h1 hidden>Equipment</h1>
+                            <h3>TI 84 Calculator</h3>
+                            <button id ="buy" class="buy-btn" onclick="purchaseProduct()" type="button">Buy now</button>
+                        </div>
+                        <h4>$10.78</h4>
+                    </li>
+                    <li data-category="" data-price="">
+                        <div class="detail">
+                            <p class="icon">
+                               <span><i class="far fa-heart"></i></span>
+                               <span><i class="far fa-share-square"></i></span>
+                               <span><i class="fas fa-shopping-basket"></i></span>
+                            </p>
+                            <a href="/browsing products/browsing_five.html"><img src="https://i5.walmartimages.com/asr/7c053eec-7300-4954-ba82-9e67dc07de2e.c45c80082575d9293c86ac08659e2bf8.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF" alt=""></a>
+                            <h1 hidden>Book</h1>
+                            <h3>C++ Book</h3>
+                            <button id ="buy" class="buy-btn" onclick="purchaseProduct()" type="button">Buy now</button>
+                        </div>
+                        <h4>$60.78</h4>
+                    </li>
+                    <li data-category="" data-price="">
+                        <div class="detail">
+                            <p class="icon">
+                               <span><i class="far fa-heart"></i></span>
+                               <span><i class="far fa-share-square"></i></span>
+                               <span><i class="fas fa-shopping-basket"></i></span>
+                            </p>
+                            <a href="/browsing products/browsing_six.html"><img src="https://media.accobrands.com/media/560-560/474398.jpg?width=680px&height=449px" alt=""></a>
+                            <h1 hidden>Book</h1>
+                            <h3>Notebook Bundle</h3>
+                            <button id ="buy" class="buy-btn" onclick="purchaseProduct()" type="button">Buy now</button>
+                        </div>
+                        <h4>$12.78</h4>
+                    </li>
+                    <li data-category="" data-price="">
+                        <div class="detail">
+                            <p class="icon">
+                               <span><i class="far fa-heart"></i></span>
+                               <span><i class="far fa-share-square"></i></span>
+                               <span><i class="fas fa-shopping-basket"></i></span>
+                            </p>
+                            <a href="/browsing products/browsing_seven.html"><img src="https://www.testbanksafe.com/wp-content/uploads/2015/04/01338059131-500x500-400x400.jpg" alt=""></a>
+                            <h1 hidden>Book</h1>
+                            <h3>Operating Systems Book</h3>
+                            <button id ="buy" class="buy-btn" onclick="purchaseProduct()" type="button">Buy now</button>
+                        </div>
+                        <h4>$75.78</h4>
+                    </li>
+                    <li data-category="" data-price="">
+                        <div class="detail">
+                            <p class="icon">
+                               <span><i class="far fa-heart"></i></span>
+                               <span><i class="far fa-share-square"></i></span>
+                               <span><i class="fas fa-shopping-basket"></i></span>
+                            </p>
+                            <a href="/browsing products/browsing_eight.html"><img src="https://cdn.shopify.com/s/files/1/0406/2511/1196/products/ACtC-3era2pPlbHbt_4y9qqf0ejuxdXGItq_z0qqMX7PBH8A17oBd9cK2H6dwoTavBQwRfAB9ELwaKuuj3Ls-382DocovoUnyl0wfVWYedPliYfepo7l1tkXUUotkl9Tg023LvLDVo4ssU5iXC-kLSckqHypgg_s1024-no_900x.jpg?v=1620093755" alt=""></a>
+                            <h1 hidden>Book</h1>
+                            <h3>Farenheit 451 Book</h3>
+                            <button id ="buy" class="buy-btn" onclick="purchaseProduct()" type="button">Buy now</button>
+                        </div>
+                        <h4>$25.78</h4>
+                    </li>
+                    <li data-category="" data-price="">
+                        <div class="detail">
+                            <p class="icon">
+                               <span><i class="far fa-heart"></i></span>
+                               <span><i class="far fa-share-square"></i></span>
+                               <span><i class="fas fa-shopping-basket"></i></span>
+                            </p>
+                            <a href="/browsing products/browsing_nine.html"><img src="https://m.media-amazon.com/images/I/91YandYecdL.jpg" alt=""></a>
+                            <h1 hidden>Equipment</h1>
+                            <h3>Backpack</h3>
+                            <button id ="buy" class="buy-btn" onclick="purchaseProduct()" type="button">Buy now</button>
+                        </div>
+                        <h4>$30.78</h4>
+                    </li>
+                    <li data-category="" data-price="">
+                        <div class="detail">
+                            <p class="icon">
+                               <span><i class="far fa-heart"></i></span>
+                               <span><i class="far fa-share-square"></i></span>
+                               <span><i class="fas fa-shopping-basket"></i></span>
+                            </p>
+                            <a href="/browsing products/browsing_ten.html"><img src="https://kbimages1-a.akamaihd.net/96350cb5-8db0-4bb0-8611-71ba63a6e734/1200/1200/False/the-divergent-series-complete-collection.jpg" alt=""></a>
+                            <h1 hidden>Book</h1>
+                            <h3>Divergent book bundle</h3>
+                            <button id ="buy" class="buy-btn" onclick="purchaseProduct()" type="button">Buy now</button>
+                        </div>
+                        <h4>$50.78</h4>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script type="text/javascript" src="browsing.js"></script>
